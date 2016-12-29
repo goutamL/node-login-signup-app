@@ -1,0 +1,45 @@
+  <div class="login-img3-body">
+
+    <div class="container">
+
+      <form method="post" ng-submit="signup()" class="login-form" name="signupForm">        
+        <div class="login-wrap">
+            <h3 class="text-center">SignUp</h3>
+
+          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+            <input class="form-control input-lg" type="text" name="displayName" ng-model="displayName" placeholder="Name" autofocus required>
+            <span class="ion-person form-control-feedback"></span>
+            <div class="help-block text-danger" ng-if="signupForm.displayName.$dirty" ng-messages="signupForm.displayName.$error">
+              <div ng-message="required">You must enter your name.</div>
+            </div>
+          </div>
+
+          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
+            <input unique-email class="form-control input-lg" type="email" id="email" name="email" ng-model="email" placeholder="Email" required autofocus>
+            <span class="ion-at form-control-feedback"></span>
+            <div class="help-block text-danger" ng-if="signupForm.email.$dirty" ng-messages="signupForm.email.$error">
+              <div ng-message="required">Your email address is required.</div>
+              <div ng-message="email">Your email address is invalid.</div>
+              <div ng-message="unique"><span class="ion-looping"></span> Email is already taken.</div>
+            </div>
+          </div>
+
+
+          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.password.$invalid && signupForm.password.$dirty }">
+            <input password-strength class="form-control input-lg" type="password" name="password" ng-model="password" placeholder="Password" required>
+            <span class="ion-key form-control-feedback"></span>
+            <div class="help-block text-danger" ng-if="signupForm.password.$dirty" ng-messages="signupForm.password.$error">
+              <div ng-message="required">Password is required.</div>
+            </div>
+          </div>
+
+
+            <button ng-disabled="signupForm.$invalid" class="btn btn-primary btn-lg btn-block" type="submit">Register</button>
+            <button class="btn btn-info btn-lg btn-block"><a href="/login">login</a></button>
+        </div>
+      </form>
+
+    </div>
+
+
+  </div>

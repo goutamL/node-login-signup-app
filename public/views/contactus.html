@@ -1,0 +1,45 @@
+  <div class="login-img3-body">
+
+    <div class="container">
+
+      <form method="post" ng-submit="contactus()" class="login-form" name="signupForm">        
+        <div class="login-wrap">
+            <h3 class="text-center">Contact US</h3>
+
+          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.displayName.$invalid && signupForm.displayName.$dirty }">
+            <input class="form-control input-lg" type="text" name="displayName" ng-model="displayName" placeholder="Name" autofocus required>
+            <span class="ion-person form-control-feedback"></span>
+            <div class="help-block text-danger" ng-if="signupForm.displayName.$dirty" ng-messages="signupForm.displayName.$error">
+              <div ng-message="required">You must enter your name.</div>
+            </div>
+          </div>
+
+          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.phoneNumber.$invalid && signupForm.phoneNumber.$dirty }">
+            <input class="form-control input-lg" type="number" name="phoneNumber" ng-model="phoneNumber" placeholder="Phone Number" autofocus>
+            <span class="ion-person form-control-feedback"></span>
+            <div class="help-block text-danger" ng-if="signupForm.phoneNumber.$dirty" ng-messages="signupForm.phoneNumber.$error">
+            </div>
+          </div>
+
+          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.email.$invalid && signupForm.email.$dirty }">
+            <input unique-email class="form-control input-lg" type="email" id="email" name="email" ng-model="email" placeholder="Email" required autofocus>
+            <span class="ion-at form-control-feedback"></span>
+            <div class="help-block text-danger" ng-if="signupForm.email.$dirty" ng-messages="signupForm.email.$error">
+              <div ng-message="required">Your email address is required.</div>
+            </div>
+          </div>
+
+          <div class="form-group has-feedback" ng-class="{ 'has-error' : signupForm.comment.$invalid && signupForm.comment.$dirty }">
+            <textarea class="form-control input-lg" name="comment" ng-model="comment" placeholder="Message" autofocus required></textarea>
+          </div>
+
+
+
+            <button ng-disabled="signupForm.$invalid" class="btn btn-primary btn-lg btn-block" type="submit">SendMessage</button>
+        </div>
+      </form>
+
+    </div>
+
+
+  </div>
